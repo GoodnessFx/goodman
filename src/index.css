@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Define primary color for Tailwind */
+:root {
+  --primary: #030213;
+  --primary-foreground: #ffffff;
+}
+
 
 
 
