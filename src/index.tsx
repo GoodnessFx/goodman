@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/globals.css';
+<<<<<<< HEAD
 import './index.css';
 import './App.css';
 
 
 
+=======
+>>>>>>> c51fb108bd44a2dccc39fccb6e02fa33fdbaf982
 import App from './App';
 
 import reportWebVitals from './reportWebVitals';
