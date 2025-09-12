@@ -5,46 +5,46 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 export default function Team() {
   const teamMembers = [
     {
-      name: "Michael Chen",
-      title: "Managing Partner & CEO",
-      image: "https://images.unsplash.com/photo-1629507208649-70919ca33793?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc21hbiUyMHBvcnRyYWl0fGVufDF8fHx8MTc1NzQwNjcwNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      bio: "25+ years in supply chain leadership roles at Fortune 500 companies. Former VP of Global Procurement at tech giants, specializing in strategic sourcing and supplier relationship management.",
-      expertise: ["Strategic Sourcing", "Supplier Management", "Cost Reduction", "Digital Transformation"]
+      name: "MR ZAK",
+      title: "Founding Partner & CEO",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwcG9ydHJhaXR8ZW58MXx8fHx8MTc1NzQwNzI5NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      bio: "25+ years in procurement leadership roles at Fortune 500 companies. Former VP of Global Procurement specializing in strategic sourcing and supplier relationship management.",
+      expertise: ["Strategic Sourcing", "Supplier Management", "Cost Reduction", "Procurement Strategy"]
     },
     {
-      name: "Sarah Rodriguez",
-      title: "Partner & Head of Operations",
-      image: "https://images.unsplash.com/photo-1754298949882-216a1c92dbb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc3dvbWFuJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzU3NDMzMTg0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      bio: "Expert in operational excellence and supply chain optimization with 20+ years of consulting experience. Led transformation projects for major manufacturing and retail companies.",
-      expertise: ["Operations Strategy", "Process Improvement", "Lean Six Sigma", "Change Management"]
+      name: "Sarah Goldsmith",
+      title: "Founding Partner & COO",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwcG9ydHJhaXR8ZW58MXx8fHx8MTc1NzQwNzI5NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      bio: "Expert in procurement operations and business development with 20+ years of consulting experience. Led transformation projects for major manufacturing and retail companies.",
+      expertise: ["Operations Strategy", "Business Development", "Process Improvement", "Change Management"]
     },
     {
-      name: "David Thompson",
-      title: "Senior Director, Analytics",
-      image: "https://images.unsplash.com/photo-1628886453497-8c0b5b07b0d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBleGVjdXRpdmUlMjBwb3J0cmFpdHxlbnwxfHx8fDE3NTc0MDg5NTd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      bio: "Data science and analytics leader with expertise in supply chain modeling and predictive analytics. PhD in Operations Research with extensive experience in AI-driven solutions.",
-      expertise: ["Data Analytics", "Predictive Modeling", "AI/ML Solutions", "Performance Optimization"]
+      name: "GOODNESS IYAMAH",
+      title: "Senior Director, Procurement Advisory",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwcG9ydHJhaXR8ZW58MXx8fHx8MTc1NzQwNzI5NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      bio: "Procurement advisory specialist with expertise in strategic sourcing and supplier management. MBA in Supply Chain Management with extensive experience in cost optimization.",
+      expertise: ["Procurement Advisory", "Strategic Sourcing", "Cost Optimization", "Supplier Relations"]
     },
     {
       name: "Jennifer Park",
-      title: "Principal Consultant, Risk Management",
-      image: "https://images.unsplash.com/photo-1722957728897-d48d7c5fa82c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbCUyMGhlYWRzaG90fGVufDF8fHx8MTc1NzQxMjAwNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      bio: "Risk management specialist with deep expertise in supply chain resilience and business continuity. Former head of risk at global logistics companies with crisis management experience.",
-      expertise: ["Risk Assessment", "Business Continuity", "Supplier Audits", "Crisis Management"]
+      title: "Director, Learning & Development",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwcG9ydHJhaXR8ZW58MXx8fHx8MTc1NzQwNzI5NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      bio: "Learning and development expert focused on building procurement capabilities. Former head of training at global procurement organizations with 15+ years experience.",
+      expertise: ["Training Design", "Capability Development", "Skills Assessment", "Mentoring"]
     },
     {
-      name: "Robert Kumar",
-      title: "Director, Digital Solutions",
-      image: "https://images.unsplash.com/photo-1731682252070-1d8f8c2ef1e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwxfHx8fDE3NTc0NDg4MzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      bio: "Technology and digital transformation expert specializing in supply chain digitization. Former CTO at supply chain technology startups with proven track record in system implementations.",
-      expertise: ["Digital Strategy", "Technology Integration", "Automation", "System Implementation"]
+      name: "David Thompson",
+      title: "Principal Consultant, Strategic Sourcing",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwcG9ydHJhaXR8ZW58MXx8fHx8MTc1NzQwNzI5NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      bio: "Strategic sourcing specialist with deep expertise in supplier evaluation and contract negotiation. Former procurement director at major corporations with proven track record in cost savings.",
+      expertise: ["Strategic Sourcing", "Supplier Evaluation", "Contract Negotiation", "Cost Management"]
     },
     {
       name: "Lisa Wagner",
-      title: "Senior Manager, Sustainability",
-      image: "https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbCUyMGhlYWRzaG90fGVufDJ8fHx8MTc1NzQxNjgxN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      bio: "Sustainability and ESG expert focused on building responsible supply chains. Environmental engineer with 15+ years experience helping companies achieve sustainability goals.",
-      expertise: ["Sustainable Sourcing", "ESG Compliance", "Carbon Footprint", "Circular Economy"]
+      title: "Senior Manager, Business Development",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwcG9ydHJhaXR8ZW58MXx8fHx8MTc1NzQwNzI5NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      bio: "Business development expert focused on identifying new opportunities and growing procurement capabilities. Former business development manager with 12+ years experience in consulting.",
+      expertise: ["Business Development", "Market Analysis", "Opportunity Identification", "Client Relations"]
     }
   ];
 

@@ -154,6 +154,7 @@ body {
 /* Sizing */
 .w-full { width: 100%; }
 .w-8 { width: 2rem; }
+.w-10 { width: 2.5rem; }
 .w-12 { width: 3rem; }
 .h-5 { height: 1.25rem; }
 .h-6 { height: 1.5rem; }
@@ -181,9 +182,15 @@ body {
 .font-medium { font-weight: 500; }
 .font-semibold { font-weight: 600; }
 .font-bold { font-weight: 700; }
+.font-black { font-weight: 900; }
 
 .leading-tight { line-height: 1.25; }
 .leading-relaxed { line-height: 1.625; }
+
+/* Text effects */
+.tracking-tight { letter-spacing: -0.025em; }
+.drop-shadow-sm { filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05)); }
+.drop-shadow-md { filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06)); }
 
 .max-w-2xl { max-width: 42rem; }
 .max-w-3xl { max-width: 48rem; }
@@ -201,6 +208,14 @@ body {
 .bg-gray-50 { background-color: var(--gray-50); }
 .bg-red-50 { background-color: var(--red-50); }
 
+/* Yellow colors for logo */
+.bg-yellow-500 { background-color: #eab308; }
+.bg-yellow-600 { background-color: #ca8a04; }
+.border-yellow-600 { border-color: #ca8a04; }
+.border-yellow-700 { border-color: #a16207; }
+.text-yellow-400 { color: #facc15; }
+.text-yellow-600 { color: #ca8a04; }
+
 /* Background with transparency */
 .bg-white\/95 { background-color: rgba(255, 255, 255, 0.95); }
 
@@ -208,6 +223,7 @@ body {
 .border { border-width: 1px; }
 .border-b { border-bottom-width: 1px; }
 .border-t { border-top-width: 1px; }
+.border-2 { border-width: 2px; }
 .border-gray-200 { border-color: var(--gray-200); }
 .border-red-200 { border-color: var(--red-200); }
 .border-white { border-color: #ffffff; }

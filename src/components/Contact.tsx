@@ -3,23 +3,115 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { useState } from "react";
+import { MapPin, Phone, Mail, Clock, Loader2 } from "lucide-react";
+import { useState, useEffect } from "react";
 import { toast } from "sonner";
+
+// Declare grecaptcha global variable
+declare global {
+  interface Window {
+    grecaptcha: {
+      reset: () => void;
+    };
+  }
+}
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
+    phone: '',
+    subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Load reCAPTCHA script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://www.google.com/recaptcha/api.js';
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.querySelector('script[src="https://www.google.com/recaptcha/api.js"]');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
+    };
+  }, []);
+
+  const handleRecaptchaChange = (token: string | null) => {
+    setRecaptchaToken(token);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    toast.success("Thank you for your message! We'll get back to you within 24 hours.");
-    setFormData({ name: '', email: '', company: '', message: '' });
+    
+    // Client-side validation
+    if (!formData.name.trim()) {
+      toast.error("Please enter your full name");
+      return;
+    }
+    if (!formData.email.trim()) {
+      toast.error("Please enter your email address");
+      return;
+    }
+    if (!formData.email.includes('@')) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+    if (formData.message.trim().length < 10) {
+      toast.error("Please enter a message with at least 10 characters");
+      return;
+    }
+    if (!recaptchaToken) {
+      toast.error("Please complete the reCAPTCHA verification");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Determine the correct endpoint based on environment
+      const endpoint = process.env.NODE_ENV === 'production' 
+        ? '/.netlify/functions/send-contact'
+        : '/api/send-contact';
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success("Thank you for your message! We'll get back to you within 24 hours.");
+        setFormData({ name: '', email: '', company: '', phone: '', subject: '', message: '' });
+        // Reset reCAPTCHA
+        if (window.grecaptcha) {
+          window.grecaptcha.reset();
+        }
+        setRecaptchaToken(null);
+      } else {
+        toast.error(result.error || "Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -34,19 +126,19 @@ export default function Contact() {
       city: "New York",
       address: "150 Broadway, Suite 1200\nNew York, NY 10038",
       phone: "+1 (212) 555-0123",
-      email: "ny@prosupplyconsulting.com"
+      email: "ny@goodmangoldsmith.com"
     },
     {
       city: "Chicago",
       address: "233 S Wacker Dr, Suite 8400\nChicago, IL 60606",
       phone: "+1 (312) 555-0456",
-      email: "chicago@prosupplyconsulting.com"
+      email: "chicago@goodmangoldsmith.com"
     },
     {
       city: "San Francisco",
       address: "555 California St, Suite 5000\nSan Francisco, CA 94104",
       phone: "+1 (415) 555-0789",
-      email: "sf@prosupplyconsulting.com"
+      email: "sf@goodmangoldsmith.com"
     }
   ];
 
@@ -98,14 +190,38 @@ export default function Contact() {
                   </div>
                 </div>
                 
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="company">Company Name</Label>
+                    <Input
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      placeholder="Enter your company name"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Phone Number</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
+                </div>
+                
                 <div className="space-y-2">
-                  <Label htmlFor="company">Company Name</Label>
+                  <Label htmlFor="subject">Subject</Label>
                   <Input
-                    id="company"
-                    name="company"
-                    value={formData.company}
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
                     onChange={handleChange}
-                    placeholder="Enter your company name"
+                    placeholder="What is this about?"
                   />
                 </div>
                 
@@ -116,14 +232,35 @@ export default function Contact() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell us about your supply chain challenges and how we can help..."
+                    placeholder="Tell us about your procurement challenges and how we can help..."
                     className="min-h-32"
                     required
                   />
                 </div>
                 
-                <Button type="submit" size="lg" className="w-full">
-                  Send Message
+                {/* reCAPTCHA */}
+                <div className="flex justify-center">
+                  <div 
+                    className="g-recaptcha" 
+                    data-sitekey="6Lea5ccrAAAAAFuR5LQcwEyjrctIfS-j-d2-FrU4"
+                    data-callback={handleRecaptchaChange}
+                  ></div>
+                </div>
+                
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full" 
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending Message...
+                    </>
+                  ) : (
+                    'Send Message'
+                  )}
                 </Button>
               </form>
             </Card>
@@ -148,7 +285,7 @@ export default function Contact() {
                   <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <div className="text-gray-900">General Inquiries</div>
-                    <div className="text-gray-600">info@prosupplyconsulting.com</div>
+                    <div className="text-gray-600">info@goodmangoldsmith.com</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">

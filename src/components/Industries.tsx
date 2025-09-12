@@ -18,88 +18,39 @@ import {
 export default function Industries() {
   const industries = [
     {
-      icon: Factory,
-      title: "Manufacturing",
-      description: "Optimize production supply chains, reduce costs, and improve efficiency across complex manufacturing operations.",
-      specialties: ["Lean Manufacturing", "Supplier Integration", "Quality Management", "Inventory Optimization"],
-      clients: "50+ clients"
-    },
-    {
-      icon: Stethoscope,
-      title: "Healthcare & Pharma",
-      description: "Navigate regulatory requirements while optimizing medical supply chains and pharmaceutical distribution networks.",
-      specialties: ["Regulatory Compliance", "Cold Chain Management", "Risk Mitigation", "Cost Containment"],
-      clients: "25+ clients"
-    },
-    {
-      icon: Cpu,
-      title: "Technology",
-      description: "Manage complex technology supply chains, from semiconductor sourcing to product lifecycle management.",
-      specialties: ["Component Sourcing", "Innovation Management", "Speed to Market", "Supply Security"],
-      clients: "40+ clients"
-    },
-    {
-      icon: Car,
-      title: "Automotive",
-      description: "Streamline automotive supply chains with just-in-time delivery, quality control, and supplier development programs.",
-      specialties: ["JIT Delivery", "Tier Management", "Quality Systems", "Cost Engineering"],
-      clients: "30+ clients"
-    },
-    {
-      icon: ShoppingBag,
-      title: "Retail & Consumer",
-      description: "Enhance retail supply chains with demand forecasting, inventory optimization, and omnichannel distribution strategies.",
-      specialties: ["Demand Planning", "Omnichannel", "Private Label", "Seasonal Management"],
-      clients: "35+ clients"
-    },
-    {
-      icon: Wheat,
-      title: "Food & Agriculture",
-      description: "Optimize food supply chains with focus on traceability, sustainability, and cold chain management.",
-      specialties: ["Traceability", "Food Safety", "Sustainability", "Cold Chain"],
-      clients: "20+ clients"
-    },
-    {
-      icon: Plane,
-      title: "Aerospace & Defense",
-      description: "Navigate complex aerospace supply chains with emphasis on quality, compliance, and security requirements.",
-      specialties: ["AS9100 Compliance", "Security Clearance", "Long-term Contracts", "Risk Management"],
+      icon: Zap,
+      title: "Energy",
+      description: "Specialized procurement solutions for energy sector operations, focusing on reliability, sustainability, and regulatory compliance.",
+      specialties: ["Asset Management", "Renewable Energy", "Grid Reliability", "ESG Compliance"],
       clients: "15+ clients"
     },
     {
-      icon: Zap,
-      title: "Energy & Utilities",
-      description: "Manage energy sector procurement with focus on reliability, sustainability, and regulatory compliance.",
-      specialties: ["Asset Management", "Renewable Energy", "Grid Reliability", "ESG Compliance"],
-      clients: "18+ clients"
+      icon: Cpu,
+      title: "Telecom",
+      description: "Technology and telecommunications procurement expertise to manage complex supply chains and drive innovation.",
+      specialties: ["Component Sourcing", "Innovation Management", "Speed to Market", "Supply Security"],
+      clients: "20+ clients"
+    },
+    {
+      icon: ShoppingBag,
+      title: "FMCG",
+      description: "Fast-moving consumer goods procurement optimization with focus on speed, efficiency, and market responsiveness.",
+      specialties: ["Demand Planning", "Supplier Integration", "Quality Management", "Cost Optimization"],
+      clients: "25+ clients"
     },
     {
       icon: Building2,
-      title: "Construction",
-      description: "Optimize construction supply chains with project-based procurement and materials management solutions.",
+      title: "Public Sector",
+      description: "Government and public sector procurement consulting with expertise in compliance, transparency, and value delivery.",
+      specialties: ["Regulatory Compliance", "Transparency", "Value Delivery", "Risk Management"],
+      clients: "18+ clients"
+    },
+    {
+      icon: Factory,
+      title: "Real Estate",
+      description: "Real estate development and construction procurement solutions for project-based operations and materials management.",
       specialties: ["Project Procurement", "Materials Management", "Subcontractor Relations", "Cost Control"],
       clients: "12+ clients"
-    },
-    {
-      icon: Truck,
-      title: "Logistics & Transport",
-      description: "Enhance logistics operations with route optimization, fleet management, and carrier relationship strategies.",
-      specialties: ["Route Optimization", "Fleet Management", "Carrier Relations", "Last Mile"],
-      clients: "22+ clients"
-    },
-    {
-      icon: Fuel,
-      title: "Oil & Gas",
-      description: "Support oil and gas operations with specialized procurement for upstream, midstream, and downstream activities.",
-      specialties: ["Upstream Support", "Safety Standards", "Environmental Compliance", "Cost Optimization"],
-      clients: "10+ clients"
-    },
-    {
-      icon: Hammer,
-      title: "Industrial Services",
-      description: "Streamline industrial service supply chains with focus on maintenance, repair, and operations procurement.",
-      specialties: ["MRO Optimization", "Service Contracts", "Spare Parts", "Predictive Maintenance"],
-      clients: "28+ clients"
     }
   ];
 

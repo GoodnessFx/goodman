@@ -38,12 +38,11 @@ export default function About() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl text-gray-900 mb-6">
-            About ProSupply Consulting
+            About GOODMAN & GOLDSMITH
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed">
-            We are a premier procurement and supply chain consulting firm with a proven track record 
-            of helping organizations optimize their operations, reduce costs, and achieve strategic objectives 
-            through innovative supply chain solutions.
+            We deliver procurement strategy and operations. We train teams. We scale procurement processes. 
+            We drive value across supply chains.
           </p>
         </div>
 

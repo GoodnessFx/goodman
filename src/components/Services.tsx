@@ -21,39 +21,39 @@ export default function Services() {
   const services = [
     {
       icon: ShoppingCart,
-      title: "Strategic Procurement",
-      description: "Comprehensive procurement strategy development, supplier management, and cost optimization to maximize value and reduce risks.",
+      title: "Procurement Advisory",
+      description: "Strategic procurement consulting to optimize your purchasing processes, reduce costs, and improve supplier relationships.",
       features: ["Spend Analysis", "Supplier Evaluation", "Contract Negotiation", "Category Management"]
     },
     {
       icon: TruckIcon,
-      title: "Supply Chain Optimization",
-      description: "End-to-end supply chain design and optimization to improve efficiency, reduce costs, and enhance customer satisfaction.",
-      features: ["Network Design", "Inventory Optimization", "Logistics Planning", "Process Improvement"]
+      title: "Strategic Sourcing",
+      description: "End-to-end strategic sourcing solutions to identify, evaluate, and select the best suppliers for your business needs.",
+      features: ["Supplier Identification", "RFP Management", "Vendor Selection", "Contract Management"]
     },
     {
       icon: BarChart3,
-      title: "Analytics & Intelligence",
-      description: "Advanced data analytics and business intelligence solutions to drive informed decision-making and strategic planning.",
-      features: ["Data Analytics", "KPI Development", "Performance Dashboards", "Predictive Modeling"]
+      title: "Supplier Management",
+      description: "Comprehensive supplier relationship management to optimize performance, reduce risks, and drive continuous improvement.",
+      features: ["Performance Monitoring", "Supplier Development", "Risk Assessment", "Relationship Management"]
     },
     {
       icon: Shield,
-      title: "Risk Management",
-      description: "Comprehensive risk assessment and mitigation strategies to protect your supply chain from disruptions and uncertainties.",
-      features: ["Risk Assessment", "Business Continuity", "Supplier Audits", "Compliance Management"]
+      title: "Procurement Training and L&D",
+      description: "Professional development programs to enhance your team's procurement skills and knowledge across all levels.",
+      features: ["Skills Assessment", "Training Programs", "Certification Support", "Mentoring"]
     },
     {
       icon: Zap,
-      title: "Digital Transformation",
-      description: "Technology-enabled solutions to modernize supply chain operations and drive digital innovation across your organization.",
-      features: ["Technology Strategy", "System Integration", "Automation Solutions", "Change Management"]
+      title: "Business Development Support",
+      description: "Strategic business development services to help you identify new opportunities and grow your procurement capabilities.",
+      features: ["Market Analysis", "Opportunity Identification", "Strategy Development", "Implementation Support"]
     },
     {
       icon: Settings,
-      title: "Operational Excellence",
-      description: "Operational improvement initiatives focused on enhancing productivity, quality, and overall supply chain performance.",
-      features: ["Process Optimization", "Lean Implementation", "Quality Management", "Performance Improvement"]
+      title: "Learning and Development",
+      description: "Comprehensive learning solutions to build procurement expertise and drive organizational capability development.",
+      features: ["Curriculum Design", "Workshop Delivery", "E-Learning", "Assessment Tools"]
     }
   ];
 
