@@ -7,42 +7,42 @@ export default function Team() {
     {
       name: "MR ZAK",
       title: "Founding Partner & CEO",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwcG9ydHJhaXR8ZW58MXx8fHx8MTc1NzQwNzI5NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      bio: "25+ years in procurement leadership roles at Fortune 500 companies. Former VP of Global Procurement specializing in strategic sourcing and supplier relationship management.",
+      image: "blob:https://web.whatsapp.com/603f7e43-14a3-4a71-9c88-dbcff991ee6b",
+      bio: "5+ years in procurement leadership roles at Fortune 500 companies. Former VP of Global Procurement specializing in strategic sourcing and supplier relationship management.",
       expertise: ["Strategic Sourcing", "Supplier Management", "Cost Reduction", "Procurement Strategy"]
     },
     {
       name: "Sarah Goldsmith",
       title: "Founding Partner & COO",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwcG9ydHJhaXR8ZW58MXx8fHx8MTc1NzQwNzI5NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      bio: "Expert in procurement operations and business development with 20+ years of consulting experience. Led transformation projects for major manufacturing and retail companies.",
+      image: "https://images.unsplash.com/photo-1659904577828-85836db5a45f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fG5pZ2VyaWFuJTIwbWFufGVufDB8fDB8fHww",
+      bio: "Expert in procurement operations and business development with 10+ years of consulting experience. Led transformation projects for major manufacturing and retail companies.",
       expertise: ["Operations Strategy", "Business Development", "Process Improvement", "Change Management"]
     },
     {
       name: "GOODNESS IYAMAH",
       title: "Senior Director, Procurement Advisory",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwcG9ydHJhaXR8ZW58MXx8fHx8MTc1NzQwNzI5NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://images.unsplash.com/photo-1684337399050-0412ebed8005?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIwfHxuaWdlcmlhbiUyMG1hbnxlbnwwfHwwfHx8MA%3D%3D",
       bio: "Procurement advisory specialist with expertise in strategic sourcing and supplier management. MBA in Supply Chain Management with extensive experience in cost optimization.",
       expertise: ["Procurement Advisory", "Strategic Sourcing", "Cost Optimization", "Supplier Relations"]
     },
     {
-      name: "Jennifer Park",
+      name: "Joshua Nebudcadnezzar",
       title: "Director, Learning & Development",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwcG9ydHJhaXR8ZW58MXx8fHx8MTc1NzQwNzI5NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://images.unsplash.com/photo-1612990383139-ebdd9ee31f7b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI0fHxuaWdlcmlhbiUyMG1hbnxlbnwwfHwwfHx8MA%3D%3D",
       bio: "Learning and development expert focused on building procurement capabilities. Former head of training at global procurement organizations with 15+ years experience.",
       expertise: ["Training Design", "Capability Development", "Skills Assessment", "Mentoring"]
     },
     {
       name: "David Thompson",
       title: "Principal Consultant, Strategic Sourcing",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwcG9ydHJhaXR8ZW58MXx8fHx8MTc1NzQwNzI5NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://media.istockphoto.com/id/517302398/photo/portrait-of-nigerian-man-with-beard-looking-at-camera.webp?a=1&b=1&s=612x612&w=0&k=20&c=2bKmY9nViDLxVf_1qgM5hVJJGhM6JqDiwDKiR7XKx0k=",
       bio: "Strategic sourcing specialist with deep expertise in supplier evaluation and contract negotiation. Former procurement director at major corporations with proven track record in cost savings.",
       expertise: ["Strategic Sourcing", "Supplier Evaluation", "Contract Negotiation", "Cost Management"]
     },
     {
-      name: "Lisa Wagner",
+      name: "Samuel Zachery",
       title: "Senior Manager, Business Development",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwcG9ydHJhaXR8ZW58MXx8fHx8MTc1NzQwNzI5NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "https://imgur.com/a/CSq6cZM",
       bio: "Business development expert focused on identifying new opportunities and growing procurement capabilities. Former business development manager with 12+ years experience in consulting.",
       expertise: ["Business Development", "Market Analysis", "Opportunity Identification", "Client Relations"]
     }

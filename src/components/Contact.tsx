@@ -123,21 +123,21 @@ export default function Contact() {
 
   const offices = [
     {
-      city: "New York",
-      address: "150 Broadway, Suite 1200\nNew York, NY 10038",
-      phone: "+1 (212) 555-0123",
+      city: "IRAWO",
+      address: "Opposite Will and Grace Ikorodu",
+      phone: "+234 805 737 0966",
       email: "ny@goodmangoldsmith.com"
     },
     {
-      city: "Chicago",
-      address: "233 S Wacker Dr, Suite 8400\nChicago, IL 60606",
-      phone: "+1 (312) 555-0456",
-      email: "chicago@goodmangoldsmith.com"
+      city: "IKORODU",
+      address: "Besides Oando Filling Station",
+      phone: "+2348072027335",
+      email: "Ikorodu@goodmangoldsmith.com"
     },
     {
-      city: "San Francisco",
-      address: "555 California St, Suite 5000\nSan Francisco, CA 94104",
-      phone: "+1 (415) 555-0789",
+      city: "Molete",
+      address: "Beside Maryland mall",
+      phone: "+234 805 737 0966",
       email: "sf@goodmangoldsmith.com"
     }
   ];
@@ -242,7 +242,7 @@ export default function Contact() {
                 <div className="flex justify-center">
                   <div 
                     className="g-recaptcha" 
-                    data-sitekey="6Lea5ccrAAAAAFuR5LQcwEyjrctIfS-j-d2-FrU4"
+                    data-sitekey="process.env.REACT_APP_RECAPTCHA_SITE_KEY"
                     data-callback={handleRecaptchaChange}
                   ></div>
                 </div>
@@ -278,7 +278,7 @@ export default function Contact() {
                   <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <div className="text-gray-900">Main Office</div>
-                    <div className="text-gray-600">+1 (212) 555-0123</div>
+                    <div className="text-gray-600">+234 805 737 0966</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
@@ -292,7 +292,7 @@ export default function Contact() {
                   <Clock className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <div className="text-gray-900">Business Hours</div>
-                    <div className="text-gray-600">Mon - Fri: 9:00 AM - 6:00 PM EST</div>
+                    <div className="text-gray-600">Mon - Fri: 9:00 AM - 6:00 PM GMT</div>
                   </div>
                 </div>
               </div>
@@ -334,7 +334,7 @@ export default function Contact() {
               </p>
               <div className="space-y-2">
                 <div className="text-gray-900">Emergency Hotline</div>
-                <div className="text-gray-700">+1 (800) 555-URGENT</div>
+                <div className="text-gray-700">+234 805 737 0966</div>
                 <div className="text-xs text-gray-500">
                   Available 24/7 for existing clients
                 </div>

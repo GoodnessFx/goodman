@@ -26,10 +26,10 @@ export default function About() {
   ];
 
   const stats = [
-    { number: "15+", label: "Years of Experience" },
-    { number: "$2.5B+", label: "Cost Savings Generated" },
-    { number: "200+", label: "Global Clients" },
-    { number: "50+", label: "Industries Served" }
+    { number: "5+", label: "Years of Experience" },
+    { number: "$5k+", label: "Cost Savings Generated" },
+    { number: "100+", label: "Global Clients" },
+    { number: "20+", label: "Industries Served" }
   ];
 
   return (

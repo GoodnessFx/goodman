@@ -30,7 +30,7 @@ export default function Footer() {
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4 text-yellow-400" />
-                  <span className="text-gray-400 text-sm">+1 (212) 555-0123</span>
+                  <span className="text-gray-400 text-sm">+234 805 737 0966</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="h-4 w-4 text-yellow-400" />
@@ -38,7 +38,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <MapPin className="h-4 w-4 text-yellow-400" />
-                  <span className="text-gray-400 text-sm">New York, NY</span>
+                  <span className="text-gray-400 text-sm">Lagos, Nigeria</span>
                 </div>
               </div>
             </div>
