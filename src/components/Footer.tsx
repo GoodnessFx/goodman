@@ -22,7 +22,7 @@ export default function Footer() {
                 <div className="w-8 h-8 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center">
                   <span className="text-white text-sm font-bold">G&G</span>
                 </div>
-                <span className="text-lg font-bold text-white">GOODMAN & GOLDSMITH</span>
+                <span className="text-lg font-bold text-white">GOODMAN</span>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
                 Leading procurement consultants delivering strategic solutions, business development, and learning & development services across industries.
