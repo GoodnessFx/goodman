@@ -120,7 +120,7 @@ export default function Services() {
               variant="secondary"
               onClick={scrollToContact}
             >
-              Get Free Assessment
+              Get Assessment
             </Button>
             <Button 
               size="lg" 

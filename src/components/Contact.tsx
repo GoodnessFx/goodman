@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
-import { MapPin, Phone, Mail, Clock, Loader2 } from "lucide-react";
+import { Phone, Mail, Clock, Loader2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 
@@ -18,27 +18,28 @@ declare global {
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    company: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
   // Load reCAPTCHA script
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js';
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js";
     script.async = true;
     script.defer = true;
     document.head.appendChild(script);
 
     return () => {
-      // Cleanup script on unmount
-      const existingScript = document.querySelector('script[src="https://www.google.com/recaptcha/api.js"]');
+      const existingScript = document.querySelector(
+        'script[src="https://www.google.com/recaptcha/api.js"]'
+      );
       if (existingScript) {
         document.head.removeChild(existingScript);
       }
@@ -51,8 +52,7 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Client-side validation
+
     if (!formData.name.trim()) {
       toast.error("Please enter your full name");
       return;
@@ -61,7 +61,7 @@ export default function Contact() {
       toast.error("Please enter your email address");
       return;
     }
-    if (!formData.email.includes('@')) {
+    if (!formData.email.includes("@")) {
       toast.error("Please enter a valid email address");
       return;
     }
@@ -77,28 +77,36 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Determine the correct endpoint based on environment
-      const endpoint = process.env.NODE_ENV === 'production' 
-        ? '/.netlify/functions/send-contact'
-        : '/api/send-contact';
+      const endpoint =
+        process.env.NODE_ENV === "production"
+          ? "/.netlify/functions/send-contact"
+          : "/api/send-contact";
 
       const response = await fetch(endpoint, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           ...formData,
-          recaptchaToken
+          recaptchaToken,
         }),
       });
 
       const result = await response.json();
 
       if (response.ok) {
-        toast.success("Thank you for your message! We'll get back to you within 24 hours.");
-        setFormData({ name: '', email: '', company: '', phone: '', subject: '', message: '' });
-        // Reset reCAPTCHA
+        toast.success(
+          "Thank you for your message! We'll get back to you within 24 hours."
+        );
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
         if (window.grecaptcha) {
           window.grecaptcha.reset();
         }
@@ -107,40 +115,21 @@ export default function Contact() {
         toast.error(result.error || "Failed to send message. Please try again.");
       }
     } catch (error) {
-      console.error('Error sending message:', error);
+      console.error("Error sending message:", error);
       toast.error("Failed to send message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
-
-  const offices = [
-    {
-      city: "IRAWO",
-      address: "Opposite Will and Grace Ikorodu",
-      phone: "+234 805 737 0966",
-      email: "ny@goodmangoldsmith.com"
-    },
-    {
-      city: "IKORODU",
-      address: "Besides Oando Filling Station",
-      phone: "+2348072027335",
-      email: "Ikorodu@goodmangoldsmith.com"
-    },
-    {
-      city: "Molete",
-      address: "Beside Maryland mall",
-      phone: "+234 805 737 0966",
-      email: "sf@goodmangoldsmith.com"
-    }
-  ];
 
   return (
     <section id="contact" className="py-20 bg-white">
@@ -151,8 +140,9 @@ export default function Contact() {
             Get In Touch
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed">
-            Ready to transform your supply chain? Contact us today for a free consultation 
-            and discover how we can help optimize your operations and drive growth.
+            Ready to transform your supply chain? Contact us today for a free
+            consultation and discover how we can help optimize your operations
+            and drive growth.
           </p>
         </div>
 
@@ -160,9 +150,7 @@ export default function Contact() {
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <Card className="p-8">
-              <h3 className="text-2xl text-gray-900 mb-6">
-                Send Us a Message
-              </h3>
+              <h3 className="text-2xl text-gray-900 mb-6">Send Us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -189,7 +177,7 @@ export default function Contact() {
                     />
                   </div>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="company">Company Name</Label>
@@ -213,7 +201,7 @@ export default function Contact() {
                     />
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="subject">Subject</Label>
                   <Input
@@ -224,7 +212,7 @@ export default function Contact() {
                     placeholder="What is this about?"
                   />
                 </div>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="message">Message *</Label>
                   <Textarea
@@ -237,20 +225,20 @@ export default function Contact() {
                     required
                   />
                 </div>
-                
+
                 {/* reCAPTCHA */}
                 <div className="flex justify-center">
-                  <div 
-                    className="g-recaptcha" 
+                  <div
+                    className="g-recaptcha"
                     data-sitekey="process.env.REACT_APP_RECAPTCHA_SITE_KEY"
                     data-callback={handleRecaptchaChange}
                   ></div>
                 </div>
-                
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full" 
+
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
@@ -259,20 +247,17 @@ export default function Contact() {
                       Sending Message...
                     </>
                   ) : (
-                    'Send Message'
+                    "Send Message"
                   )}
                 </Button>
               </form>
             </Card>
           </div>
 
-          {/* Contact Information */}
+          {/* Quick Contact */}
           <div className="space-y-8">
-            {/* Quick Contact */}
             <Card className="p-6">
-              <h3 className="text-xl text-gray-900 mb-4">
-                Quick Contact
-              </h3>
+              <h3 className="text-xl text-gray-900 mb-4">Quick Contact</h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
@@ -285,58 +270,19 @@ export default function Contact() {
                   <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <div className="text-gray-900">General Inquiries</div>
-                    <div className="text-gray-600">info@goodmangoldsmith.com</div>
+                    <div className="text-gray-600">
+                    goodmangoldsmithltd@gmail.com
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Clock className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <div className="text-gray-900">Business Hours</div>
-                    <div className="text-gray-600">Mon - Fri: 9:00 AM - 6:00 PM GMT</div>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            {/* Office Locations */}
-            <Card className="p-6">
-              <h3 className="text-xl text-gray-900 mb-4">
-                Office Locations
-              </h3>
-              <div className="space-y-6">
-                {offices.map((office, index) => (
-                  <div key={index} className="space-y-2">
-                    <div className="flex items-center space-x-2">
-                      <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
-                      <div className="font-medium text-gray-900">{office.city}</div>
-                    </div>
-                    <div className="text-sm text-gray-600 ml-6 whitespace-pre-line">
-                      {office.address}
-                    </div>
-                    <div className="text-sm text-gray-600 ml-6">
-                      {office.phone}
-                    </div>
-                    <div className="text-sm text-gray-600 ml-6">
-                      {office.email}
+                    <div className="text-gray-600">
+                      Mon - Fri: 9:00 AM - 6:00 PM GMT
                     </div>
                   </div>
-                ))}
-              </div>
-            </Card>
-
-            {/* Emergency Contact */}
-            <Card className="p-6 bg-red-50 border-red-200">
-              <h3 className="text-xl text-gray-900 mb-4">
-                24/7 Emergency Support
-              </h3>
-              <p className="text-gray-600 text-sm mb-4">
-                For urgent supply chain disruptions or critical issues affecting your operations.
-              </p>
-              <div className="space-y-2">
-                <div className="text-gray-900">Emergency Hotline</div>
-                <div className="text-gray-700">+234 805 737 0966</div>
-                <div className="text-xs text-gray-500">
-                  Available 24/7 for existing clients
                 </div>
               </div>
             </Card>

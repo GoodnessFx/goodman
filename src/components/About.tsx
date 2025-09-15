@@ -26,10 +26,8 @@ export default function About() {
   ];
 
   const stats = [
-    { number: "5+", label: "Years of Experience" },
-    { number: "$5k+", label: "Cost Savings Generated" },
-    { number: "100+", label: "Global Clients" },
-    { number: "20+", label: "Industries Served" }
+    { number: "A DECADE", label: "Years of Experience" },
+  
   ];
 
   return (
@@ -53,15 +51,12 @@ export default function About() {
               Leading the Future of Supply Chain Excellence
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              Founded by industry veterans with decades of experience in procurement, supply chain management, 
-              and strategic consulting, ProSupply Consulting has established itself as a trusted partner for 
-              organizations seeking to transform their supply chain operations.
+            Founded by seasoned professionals with extensive experience in procurement, supply chain management, and strategic consulting, Goodman & Goldsmith has established itself as a trusted partner for organizations aiming to optimize and transform their operations.
+
+
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Our team of experts combines deep industry knowledge with cutting-edge methodologies to deliver 
-              customized solutions that address the unique challenges facing modern supply chains. From digital 
-              transformation initiatives to risk management strategies, we help our clients build resilient, 
-              efficient, and sustainable supply chain networks.
+            Our team combines deep industry expertise with innovative methodologies to deliver tailored solutions that address the unique challenges of today’s business landscape. From digital transformation initiatives to risk management and operational efficiency strategies, we help our clients build resilient, streamlined, and sustainable business processes.
             </p>
             <div className="grid grid-cols-2 gap-6 pt-4">
               {stats.map((stat, index) => (

@@ -109,37 +109,6 @@ export default function Industries() {
             );
           })}
         </div>
-
-        {/* Industry Stats */}
-        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl text-gray-900 mb-4">
-              Cross-Industry Impact
-            </h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Our diverse industry experience enables us to bring best practices and innovative 
-              solutions across sectors, delivering exceptional results for our clients.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary">12</div>
-              <div className="text-gray-600">Industry Sectors</div>
-              <div className="text-sm text-gray-500">Served globally</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary">285+</div>
-              <div className="text-gray-600">Active Clients</div>
-              <div className="text-sm text-gray-500">Across all industries</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary">$3.2B+</div>
-              <div className="text-gray-600">Cost Savings</div>
-              <div className="text-sm text-gray-500">Generated for clients</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
