@@ -32,37 +32,14 @@ export default function Hero() {
             <div className="space-y-2">
               <h1 className="leading-tight">
                 <span className="block text-5xl md:text-6xl font-extrabold tracking-wide text-blue-700 font-['Montserrat']">
-                  GOODMAN
+                  Delivering Procurement Excellence
                 </span>
-                <span className="block text-black text-lg md:text-xl font-['Playfair_Display']">
-                  A part of GOODMAN & GOLDSMITH
-                </span>
+                <span className="block text-black text-lg md:text-xl font-['Playfair_Display']"></span>
               </h1>
               <p className="text-xl text-white leading-relaxed max-w-2xl">
-                Procurement consultants. Procurement services.
                 <br />
-                Business development. Learning and development.
+                Leading procurement firm delivering strategic solutions, business development, and learning & development services across industries.
               </p>
-            </div>
-
-            {/* Key Benefits */}
-            <div className="grid sm:grid-cols-2 gap-4">
-              {[
-                "Procurement Advisory",
-                "Strategic Sourcing",
-                "Supplier Management",
-                "Procurement Training & L&D",
-              ].map((text, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center space-x-3 bg-white/70 backdrop-blur-sm rounded-lg p-3 shadow-sm"
-                >
-                  <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
-                    <CheckCircle className="h-4 w-4 text-white" />
-                  </div>
-                  <span className="text-gray-800 font-medium">{text}</span>
-                </div>
-              ))}
             </div>
           </div>
         </div>

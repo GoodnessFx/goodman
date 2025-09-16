@@ -10,7 +10,6 @@ export default function Header() {
   const scrollToSection = (sectionId: string) => {
     if (location.pathname !== "/") {
       navigate("/", { replace: false });
-      // wait for homepage to render
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) element.scrollIntoView({ behavior: "smooth" });
@@ -28,18 +27,15 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2">
               <img
                 src="/goodman-logo.png"
                 alt="Goodman Logo"
-                className="w-12 h-12 rounded-lg shadow-lg border-2 border-gray-200 object-cover"
+                className="w-10 h-10 rounded-lg shadow-md border border-gray-200 object-cover"
               />
               <div className="flex flex-col leading-tight">
-                <span className="text-2xl font-bold text-blue-900 tracking-wide">
-                  GOODMAN
-                </span>
-                <span className="text-xs font-medium text-gray-600">
-                  PART OF GOODMAN &amp; GOLDSMITH
+                <span className="text-xl font-bold text-blue-900 tracking-wide">
+                  GOODMAN &amp; GOLDSMITH
                 </span>
               </div>
             </div>
@@ -49,31 +45,29 @@ export default function Header() {
           <nav className="hidden lg:flex space-x-1">
             <button
               onClick={() => scrollToSection("home")}
-              className="px-4 py-2 text-blue-800 hover:text-yellow-600 font-medium transition-all duration-200 rounded-md hover:bg-yellow-50"
+              className="px-4 py-2 font-semibold text-blue-900 hover:text-yellow-600 tracking-wide transition-all duration-200 rounded-md hover:bg-yellow-50"
+              style={{ fontFamily: "Poppins, sans-serif" }}
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="px-4 py-2 text-blue-800 hover:text-yellow-600 font-medium transition-all duration-200 rounded-md hover:bg-yellow-50"
+              className="px-4 py-2 font-semibold text-blue-900 hover:text-yellow-600 tracking-wide transition-all duration-200 rounded-md hover:bg-yellow-50"
+              style={{ fontFamily: "Poppins, sans-serif" }}
             >
               About Us
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="px-4 py-2 text-blue-800 hover:text-yellow-600 font-medium transition-all duration-200 rounded-md hover:bg-yellow-50"
+              className="px-4 py-2 font-semibold text-blue-900 hover:text-yellow-600 tracking-wide transition-all duration-200 rounded-md hover:bg-yellow-50"
+              style={{ fontFamily: "Poppins, sans-serif" }}
             >
               Services
             </button>
-            <button
-              onClick={() => scrollToSection("industries")}
-              className="px-4 py-2 text-blue-800 hover:text-yellow-600 font-medium transition-all duration-200 rounded-md hover:bg-yellow-50"
-            >
-              Industries
-            </button>
             <Link
               to="/contact"
-              className="px-4 py-2 text-blue-800 hover:text-yellow-600 font-medium transition-all duration-200 rounded-md hover:bg-yellow-50"
+              className="px-4 py-2 font-semibold text-blue-900 hover:text-yellow-600 tracking-wide transition-all duration-200 rounded-md hover:bg-yellow-50"
+              style={{ fontFamily: "Poppins, sans-serif" }}
             >
               Contact Us
             </Link>
@@ -96,31 +90,29 @@ export default function Header() {
             <div className="flex flex-col space-y-2">
               <button
                 onClick={() => scrollToSection("home")}
-                className="text-blue-800 hover:text-yellow-600 font-medium transition-colors text-left py-3 px-4 rounded-lg hover:bg-yellow-50"
+                className="text-blue-900 hover:text-yellow-600 font-semibold tracking-wide transition-colors text-left py-3 px-4 rounded-lg hover:bg-yellow-50"
+                style={{ fontFamily: "Poppins, sans-serif" }}
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-blue-800 hover:text-yellow-600 font-medium transition-colors text-left py-3 px-4 rounded-lg hover:bg-yellow-50"
+                className="text-blue-900 hover:text-yellow-600 font-semibold tracking-wide transition-colors text-left py-3 px-4 rounded-lg hover:bg-yellow-50"
+                style={{ fontFamily: "Poppins, sans-serif" }}
               >
                 About Us
               </button>
               <button
                 onClick={() => scrollToSection("services")}
-                className="text-blue-800 hover:text-yellow-600 font-medium transition-colors text-left py-3 px-4 rounded-lg hover:bg-yellow-50"
+                className="text-blue-900 hover:text-yellow-600 font-semibold tracking-wide transition-colors text-left py-3 px-4 rounded-lg hover:bg-yellow-50"
+                style={{ fontFamily: "Poppins, sans-serif" }}
               >
                 Services
               </button>
-              <button
-                onClick={() => scrollToSection("industries")}
-                className="text-blue-800 hover:text-yellow-600 font-medium transition-colors text-left py-3 px-4 rounded-lg hover:bg-yellow-50"
-              >
-                Industries
-              </button>
               <Link
                 to="/contact"
-                className="text-blue-800 hover:text-yellow-600 font-medium transition-colors text-left py-3 px-4 rounded-lg hover:bg-yellow-50"
+                className="text-blue-900 hover:text-yellow-600 font-semibold tracking-wide transition-colors text-left py-3 px-4 rounded-lg hover:bg-yellow-50"
+                style={{ fontFamily: "Poppins, sans-serif" }}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact Us
