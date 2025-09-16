@@ -4,7 +4,7 @@ import {
   ShoppingCart, 
   TruckIcon, 
   BarChart3, 
-  Shield, 
+  Globe, 
   Zap, 
   Settings,
   ArrowRight
@@ -32,10 +32,10 @@ export default function Services() {
       features: ["Performance Monitoring", "Supplier Development", "Risk Assessment", "Relationship Management"]
     },
     {
-      icon: Shield,
-      title: "Procurement Training and L&D",
-      description: "Professional development programs to enhance your team's procurement skills and knowledge across all levels.",
-      features: ["Skills Assessment", "Training Programs", "Certification Support", "Mentoring"]
+      icon: Globe,
+      title: "Ethical Sourcing",
+      description: "Helping businesses source responsibly by ensuring sustainability, fair labor practices, and compliance with global ethical standards.",
+      features: ["Sustainability Audits", "Fair Labor Compliance", "Supplier Code of Conduct", "Responsible Supply Chains"]
     },
     {
       icon: Zap,

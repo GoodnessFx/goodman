@@ -81,7 +81,7 @@ export default function About() {
                     className="h-full bg-cover bg-center animate-zoom"
                     style={{
                       backgroundImage:
-                        "url('https://images.unsplash.com/photo-1581090700227-4c4e6b0a67f5?auto=format&fit=crop&w=800&q=80')",
+                        "url('https://plus.unsplash.com/premium_photo-1682144979903-95bd827deba5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTYxfHxlbmdpbmVlcmluZyUyMGluZHVzdHJ5JTIwZmFjaWxpdHl8ZW58MHx8MHx8fDA%3D')",
                       animationDuration: "9s",
                     }}
                   />
@@ -92,7 +92,7 @@ export default function About() {
                     className="h-full bg-cover bg-center animate-zoom"
                     style={{
                       backgroundImage:
-                        "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80')",
+                        "url('https://plus.unsplash.com/premium_photo-1661963653263-ba95e11e664d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTgxfHxlbmdpbmVlcmluZyUyMGluZHVzdHJ5JTIwZmFjaWxpdHl8ZW58MHx8MHx8fDA%3D')",
                       animationDuration: "11s",
                       animationDelay: "0.6s",
                     }}
@@ -106,7 +106,7 @@ export default function About() {
                     className="h-full bg-cover bg-center animate-zoom"
                     style={{
                       backgroundImage:
-                        "url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80')",
+                        "url('https://images.unsplash.com/photo-1474674556023-efef886fa147?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGluZHVzdHJ5fGVufDB8fDB8fHww')",
                       animationDuration: "10.5s",
                       animationDelay: "0.3s",
                     }}
@@ -118,7 +118,7 @@ export default function About() {
                     className="h-full bg-cover bg-center animate-zoom"
                     style={{
                       backgroundImage:
-                        "url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=80')",
+                        "url('https://plus.unsplash.com/premium_photo-1661963049200-024ef364ad15?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8')",
                       animationDuration: "8.5s",
                       animationDelay: "0.9s",
                     }}
