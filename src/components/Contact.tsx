@@ -9,9 +9,8 @@ import { toast } from "sonner";
 
 declare global {
   interface Window {
-    grecaptcha: {
-      reset: () => void;
-    };
+    grecaptcha: any;
+    onRecaptchaSuccess: (token: string) => void;
   }
 }
 
@@ -27,39 +26,41 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
+  // Load reCAPTCHA script
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://www.google.com/recaptcha/api.js";
-    script.async = true;
-    script.defer = true;
-    document.head.appendChild(script);
+    const scriptId = "recaptcha-script";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://www.google.com/recaptcha/api.js";
+      script.async = true;
+      script.defer = true;
+      document.body.appendChild(script);
+    }
 
-    return () => {
-      const existingScript = document.querySelector(
-        'script[src="https://www.google.com/recaptcha/api.js"]'
-      );
-      if (existingScript) document.head.removeChild(existingScript);
+    // Define callback globally so Google reCAPTCHA can call it
+    window.onRecaptchaSuccess = (token: string) => {
+      setRecaptchaToken(token);
     };
   }, []);
 
-  const handleRecaptchaChange = (token: string | null) => {
-    setRecaptchaToken(token);
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!formData.name.trim()) return toast.error("Please enter your full name");
     if (!formData.email.trim()) return toast.error("Please enter your email address");
     if (!formData.email.includes("@")) return toast.error("Please enter a valid email address");
-    if (formData.message.trim().length < 10) return toast.error("Please enter a message with at least 10 characters");
+    if (formData.message.trim().length < 10)
+      return toast.error("Please enter a message with at least 10 characters");
     if (!recaptchaToken) return toast.error("Please complete the reCAPTCHA verification");
 
     setIsSubmitting(true);
 
     try {
-      const endpoint = process.env.NODE_ENV === "production"
-        ? "/.netlify/functions/send-contact"
-        : "/api/send-contact";
+      const endpoint =
+        process.env.NODE_ENV === "production"
+          ? "/.netlify/functions/send-contact"
+          : "/api/send-contact";
 
       const response = await fetch(endpoint, {
         method: "POST",
@@ -72,7 +73,10 @@ export default function Contact() {
       if (response.ok) {
         toast.success("Thank you for your message! We'll get back to you within 24 hours.");
         setFormData({ name: "", email: "", company: "", phone: "", subject: "", message: "" });
-        if (window.grecaptcha) window.grecaptcha.reset();
+
+        if (window.grecaptcha) {
+          window.grecaptcha.reset();
+        }
         setRecaptchaToken(null);
       } else {
         toast.error(result.error || "Failed to send message. Please try again.");
@@ -86,7 +90,7 @@ export default function Contact() {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -102,7 +106,8 @@ export default function Contact() {
         <div className="relative text-center max-w-3xl px-4">
           <h2 className="text-3xl md:text-4xl text-white mb-6 font-bold">Get In Touch</h2>
           <p className="text-xl text-gray-200 leading-relaxed">
-            Ready to transform your supply chain? Contact us today for a free consultation and discover how we can help optimize your operations and drive growth.
+            Ready to transform your supply chain? Contact us today for a consultation and discover
+            how we can help optimize your operations and drive growth.
           </p>
         </div>
       </div>
@@ -188,11 +193,12 @@ export default function Contact() {
                 />
               </div>
 
+              {/* reCAPTCHA v2 */}
               <div className="flex justify-center">
                 <div
                   className="g-recaptcha"
                   data-sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY as string}
-                  data-callback={handleRecaptchaChange}
+                  data-callback="onRecaptchaSuccess"
                 ></div>
               </div>
 
