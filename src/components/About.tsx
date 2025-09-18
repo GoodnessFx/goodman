@@ -1,5 +1,5 @@
 import { Card } from "./ui/card"
-import { Target, Eye, Award, Users } from "lucide-react"
+import { Target, Eye, Settings, BookOpen} from "lucide-react"
 
 export default function About() {
   const values = [
@@ -16,13 +16,13 @@ export default function About() {
         "To be the leading procurement consulting firm, recognized for transforming supply chains and delivering exceptional value to our clients.",
     },
     {
-      icon: Award,
+      icon: Settings,
       title: "Our Method",
       description:
         "We maintain the highest standards of quality and professionalism in every engagement, delivering results that exceed expectations.",
     },
     {
-      icon: Users,
+      icon: BookOpen,
       title: " Our Philosophy",
       description:
         "We work as trusted partners with our clients, building long-term relationships based on transparency and mutual success.",
