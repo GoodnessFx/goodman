@@ -14,12 +14,12 @@ import {
 
 export default function Services() {
   const services = [
-    { icon: faCartShopping, title: "Project Procurement", description: "End-to-end procurement advisory services designed to streamline your purchasing processes, strengthen supplier partnerships, and deliver measurable cost savings.", features: ["Spend Analysis", "Supplier Evaluation", "Contract Negotiation", "Category Management"] },
+    { icon: faCartShopping, title: "Project Procurement", description: "Delivering projects on time and on budget by providing flexible procurement support and full project management", features: ["End-to-End Project Procurement Management", "Procurement-as-a-Service", "Bid & Tender Support", "Specialist Expertise Deployment"] },
     { icon: faChessKnight, title: "Strategic Sourcing", description: "End-to-end strategic sourcing solutions to identify, evaluate, and select the best suppliers for your business needs.", features: ["Supplier Identification", "RFP Management", "Vendor Selection", "Contract Management"] },
-    { icon: faGear, title: "Operational Procurement", description: "Comprehensive supplier relationship management to optimize performance, reduce risks, and drive continuous improvement.", features: ["Performance Monitoring", "Supplier Development", "Risk Assessment", "Relationship Management"] },
+    { icon: faGear, title: "Operational Procurement", description: "Ensuring seamless day-to-day purchasing, enabling organizations to run efficiently and focus on their core priorities.", features: ["Purchase Order Management", "Supplier Coordination", "Compliance & Policy Adherence", "Cost & Spend Control"] },
     { icon: faLeaf, title: "Ethical Sourcing", description: "Helping businesses source responsibly by ensuring sustainability, fair labor practices, and compliance with global ethical standards.", features: ["Sustainability Audits", "Fair Labor Compliance", "Supplier Code of Conduct", "Responsible Supply Chains"] },
-    { icon: faBolt, title: "Business Development Support", description: "Strategic business development services to help you identify new opportunities and grow your procurement capabilities.", features: ["Market Analysis", "Opportunity Identification", "Strategy Development", "Implementation Support"] },
-    { icon: faBrain, title: "Learning and Development", description: "Comprehensive learning solutions to build procurement expertise and drive organizational capability development.", features: ["Curriculum Design", "Workshop Delivery", "E-Learning", "Assessment Tools"] }
+    { icon: faBolt, title: "Business Development", description: "Strategic business development services to help you identify new opportunities and grow your procurement capabilities.", features: ["Market Analysis", "Opportunity Identification", "Strategy Development", "Implementation Support"] },
+    { icon: faBrain, title: "Learning and Development", description: "Comprehensive learning solutions to build procurement expertise and drive organizational capability development.", features: ["Training Programs & Workshops", "Certification & Accreditation Support", "Customized Capability Building", "Leadership & Soft Skills Development"] }
   ];
 
   return (
