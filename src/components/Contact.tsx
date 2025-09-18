@@ -224,7 +224,7 @@ export default function Contact() {
                 <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                 <div>
                   <div className="text-gray-900">Main Office</div>
-                  <div className="text-gray-600">+234 805 737 0966</div>
+                  <div className="text-gray-600">+234 903 988 4866</div>
                 </div>
               </div>
               <div className="flex items-start space-x-3">

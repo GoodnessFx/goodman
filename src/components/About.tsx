@@ -17,13 +17,13 @@ export default function About() {
     },
     {
       icon: Award,
-      title: "Excellence",
+      title: "Our Method",
       description:
         "We maintain the highest standards of quality and professionalism in every engagement, delivering results that exceed expectations.",
     },
     {
       icon: Users,
-      title: "Partnership",
+      title: " Our Philosophy",
       description:
         "We work as trusted partners with our clients, building long-term relationships based on transparency and mutual success.",
     },
