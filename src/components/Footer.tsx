@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Linkedin, Mail, Phone, MapPin } from "lucide-react"
+import { Mail, Phone, MapPin } from "lucide-react"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -58,7 +58,15 @@ export default function Footer() {
                   className="w-10 h-10 bg-[#0A66C2] rounded-md flex items-center justify-center hover:bg-[#004182] transition-colors"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin className="h-5 w-5 text-white h-5 w-5 fill-current" />
+                  <svg 
+                    className="h-6 w-6" 
+                    viewBox="0 0 24 24" 
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="24" height="24" rx="4" fill="#0A66C2"/>
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z" fill="white"/>
+                  </svg>
                 </a>
               </div>
             </div>

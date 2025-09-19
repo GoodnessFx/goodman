@@ -4,8 +4,10 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
 import { Phone, Mail, Clock, Loader2 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 
 declare global {
   interface Window {
@@ -25,23 +27,17 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-  // Load reCAPTCHA script
+  // Initialize EmailJS
   useEffect(() => {
-    const scriptId = "recaptcha-script";
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement("script");
-      script.id = scriptId;
-      script.src = "https://www.google.com/recaptcha/api.js";
-      script.async = true;
-      script.defer = true;
-      document.body.appendChild(script);
-    }
-
-    window.onRecaptchaSuccess = (token: string) => {
-      setRecaptchaToken(token);
-    };
+    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "rRA_wmPsqw0tN3MUT");
   }, []);
+
+  // Handle reCAPTCHA change
+  const handleRecaptchaChange = (token: string | null) => {
+    setRecaptchaToken(token);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,29 +52,66 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Always point to Netlify function
-      const endpoint = "/.netlify/functions/send-contact";
-
-      const response = await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, recaptchaToken }),
+      console.log("Sending email with params:", {
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company || "Not provided",
+        phone: formData.phone || "Not provided",
+        subject: formData.subject || "Contact Form Submission",
+        message: formData.message,
+        to_email: "goodmangoldsmithltd@gmail.com",
+        'g-recaptcha-response': recaptchaToken,
       });
+      console.log("Service ID:", process.env.REACT_APP_EMAILJS_SERVICE_ID || "service_8ajtiw1");
+      console.log("Template ID:", process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "template_4j1dbfs");
+      console.log("Public Key:", process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "rRA_wmPsqw0tN3MUT");
+      console.log("reCAPTCHA Token:", recaptchaToken);
+      
+      // Create template parameters with reCAPTCHA token
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company || "Not provided",
+        phone: formData.phone || "Not provided",
+        subject: formData.subject || "Contact Form Submission",
+        message: formData.message,
+        to_email: "goodmangoldsmithltd@gmail.com",
+        'g-recaptcha-response': recaptchaToken,
+      };
 
-      const result = await response.json();
+      // Use EmailJS send method with template parameters
+      const result = await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID || "service_8ajtiw1",
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "template_4j1dbfs",
+        templateParams,
+        {
+          publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "rRA_wmPsqw0tN3MUT",
+        }
+      );
+      
+      console.log("EmailJS result:", result);
 
-      if (response.ok) {
-        toast.success("Thank you for your message! We'll get back to you within 24 hours.");
-        setFormData({ name: "", email: "", company: "", phone: "", subject: "", message: "" });
+      toast.success("Thank you for your message! We'll get back to you within 24 hours.");
+      setFormData({ name: "", email: "", company: "", phone: "", subject: "", message: "" });
 
-        if (window.grecaptcha) window.grecaptcha.reset();
-        setRecaptchaToken(null);
-      } else {
-        toast.error(result.error || "Failed to send message. Please try again.");
+      // Reset reCAPTCHA
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
       }
+      setRecaptchaToken(null);
     } catch (error: any) {
-      console.error(error);
-      toast.error("Failed to send message. Please try again.");
+      console.error("EmailJS error:", error);
+      console.error("Error details:", {
+        status: error.status,
+        text: error.text,
+        message: error.message,
+        response: error.response
+      });
+      
+      // Log the full error object
+      console.error("Full error object:", JSON.stringify(error, null, 2));
+      
+      toast.error(`Failed to send message: ${error.text || error.message || "Unknown error"}`);
     } finally {
       setIsSubmitting(false);
     }
@@ -186,11 +219,12 @@ export default function Contact() {
               </div>
 
               <div className="flex justify-center">
-                <div
-                  className="g-recaptcha"
-                  data-sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY as string}
-                  data-callback="onRecaptchaSuccess"
-                ></div>
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY || "6Lf2nsorAAAAAJPs6DcDQw60JmKj7d_HXO_jDhsH"}
+                  onChange={handleRecaptchaChange}
+                  theme="light"
+                />
               </div>
 
               <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
