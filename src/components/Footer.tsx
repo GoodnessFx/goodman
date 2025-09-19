@@ -25,19 +25,20 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             
             <div className="md:col-span-3">
-              <div className="flex items-center mb-3">
-                <img
-                  src="/goodman-logo.png"
-                  alt="Goodman & Goldsmith Logo"
-                  className="h-10 w-10 rounded-md object-cover border-2 border-gray-200 shadow-lg"
-                />
-                <span className="text-lg font-bold text-white ml-3 -mt-3">
-                  GOODMAN & GOLDSMITH
-                </span>
-              </div>
+            <div className="flex items-center mb-3 -mt-2">
+  <img
+    src="/goodman-logo.png"
+    alt="Goodman & Goldsmith Logo"
+    className="h-10 w-10 object-contain"
+  />
+  <span className="text-lg font-bold text-white ml-3">
+    GOODMAN & GOLDSMITH
+  </span>
+</div>
+
               <p className="text-gray-300 text-sm leading-relaxed mb-4"></p>
 
-              <div className="space-y-2">
+              <div className="space-y-2 ml-3">
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4 text-blue-300" />
                   <span className="text-gray-300 text-sm">+234 805 737 0966</span>
@@ -52,10 +53,10 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="mt-4">
+              <div className="mt-4 ml-3">
                 <a
                   href="#"
-                  className="w-10 h-10 bg-[#0A66C2] rounded-md flex items-center justify-center hover:bg-[#004182] transition-colors"
+                  className="w-10 h-10 bg-[#0A66C2] rounded-md flex items-center justify-center hover:bg-[#0A66C2] transition-colors"
                   aria-label="LinkedIn"
                 >
                   <svg 
@@ -119,7 +120,7 @@ export default function Footer() {
             <img
               src="/goodman-logo.png"
               alt="Goodman & Goldsmith Logo"
-              className="h-8 w-auto mb-3 rounded-md shadow-md border-2 border-gray-700 object-cover"
+              className="h-8 w-auto mb-3 rounded-md shadow-md  object-cover"
             />
             <div className="text-gray-400 text-sm text-center">
               © {currentYear} GOODMAN & GOLDSMITH. All rights reserved.

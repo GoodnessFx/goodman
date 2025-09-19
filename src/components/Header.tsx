@@ -29,7 +29,7 @@ export default function Header() {
           <img
             src="/goodman-logo.png"
             alt="Goodman Logo"
-            className="w-10 h-10 rounded-lg shadow-md border border-gray-200 object-cover"
+            className="w-10 h-10  object-cover"
           />
           <span className="text-xl font-bold text-blue-900 tracking-wide">
             GOODMAN &amp; GOLDSMITH
