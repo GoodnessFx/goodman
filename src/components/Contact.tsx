@@ -38,7 +38,6 @@ export default function Contact() {
       document.body.appendChild(script);
     }
 
-    // Define callback globally so Google reCAPTCHA can call it
     window.onRecaptchaSuccess = (token: string) => {
       setRecaptchaToken(token);
     };
@@ -57,10 +56,8 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const endpoint =
-        process.env.NODE_ENV === "production"
-          ? "/.netlify/functions/send-contact"
-          : "/api/send-contact";
+      // Always point to Netlify function
+      const endpoint = "/.netlify/functions/send-contact";
 
       const response = await fetch(endpoint, {
         method: "POST",
@@ -74,14 +71,12 @@ export default function Contact() {
         toast.success("Thank you for your message! We'll get back to you within 24 hours.");
         setFormData({ name: "", email: "", company: "", phone: "", subject: "", message: "" });
 
-        if (window.grecaptcha) {
-          window.grecaptcha.reset();
-        }
+        if (window.grecaptcha) window.grecaptcha.reset();
         setRecaptchaToken(null);
       } else {
         toast.error(result.error || "Failed to send message. Please try again.");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
       toast.error("Failed to send message. Please try again.");
     } finally {
@@ -95,7 +90,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 relative">
-      {/* Background Image & Header */}
       <div className="relative w-full h-96 flex items-center justify-center">
         <img
           src="https://media.istockphoto.com/id/1345338201/nl/foto/shot-of-two-young-call-center-agents-working-in-an-office.jpg?s=612x612&w=0&k=20&c=yLjM3R1r9NaymeGLzf_Jq7gP8Qimji4o2x0uUdJJ620="
@@ -112,9 +106,7 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Contact Form & Quick Contact */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-12 grid lg:grid-cols-3 gap-12">
-        {/* Contact Form */}
         <div className="lg:col-span-2">
           <Card className="p-8">
             <h3 className="text-2xl text-gray-900 mb-6">Send Us a Message</h3>
@@ -193,7 +185,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* reCAPTCHA v2 */}
               <div className="flex justify-center">
                 <div
                   className="g-recaptcha"
@@ -215,7 +206,6 @@ export default function Contact() {
           </Card>
         </div>
 
-        {/* Quick Contact */}
         <div className="space-y-8">
           <Card className="p-6">
             <h3 className="text-xl text-gray-900 mb-4">Reach Us Here</h3>
@@ -247,4 +237,4 @@ export default function Contact() {
       </div>
     </section>
   );
-}
+}  
