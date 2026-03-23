@@ -20,8 +20,9 @@ function CardHeader({ className = "", ...props }: React.ComponentProps<"div">) {
   );
 }
 
-function CardTitle({ className = "", ...props }: React.ComponentProps<"div">) {
+function CardTitle({ className = "", ...props }: React.ComponentProps<"h4">) {
   return (
+    // eslint-disable-next-line jsx-a11y/heading-has-content
     <h4
       data-slot="card-title"
       className={`card-title ${className}`.trim()}

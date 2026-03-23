@@ -1,10 +1,26 @@
 import { useState } from "react"
 import { Mail, Phone, MapPin } from "lucide-react"
+import { useLocation, useNavigate, Link } from "react-router-dom"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
   const [email, setEmail] = useState("")
   const [status, setStatus] = useState("")
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const scrollToSection = (sectionId: string) => {
+    if (location.pathname !== "/") {
+      navigate("/", { replace: false })
+      setTimeout(() => {
+        const element = document.getElementById(sectionId)
+        if (element) element.scrollIntoView({ behavior: "smooth" })
+      }, 100)
+    } else {
+      const element = document.getElementById(sectionId)
+      if (element) element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -55,7 +71,9 @@ export default function Footer() {
 
               <div className="mt-4 ml-3">
                 <a
-                  href="#"
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noreferrer"
                   className="w-10 h-10 bg-[#0A66C2] rounded-md flex items-center justify-center hover:bg-[#0A66C2] transition-colors"
                   aria-label="LinkedIn"
                 >
@@ -75,10 +93,10 @@ export default function Footer() {
             <div className="md:col-span-2">
               <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-300 hover:text-[#0077B5] text-sm">About Us</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-[#0077B5] text-sm">Our Services</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-[#0077B5] text-sm">Our Team</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-[#0077B5] text-sm">Contact</a></li>
+                <li><button onClick={() => scrollToSection("about")} className="text-gray-300 hover:text-[#0077B5] text-sm text-left">About Us</button></li>
+                <li><button onClick={() => scrollToSection("services")} className="text-gray-300 hover:text-[#0077B5] text-sm text-left">Our Services</button></li>
+                <li><button onClick={() => scrollToSection("industries")} className="text-gray-300 hover:text-[#0077B5] text-sm text-left">Our Industries</button></li>
+                <li><Link to="/contact" className="text-gray-300 hover:text-[#0077B5] text-sm">Contact</Link></li>
               </ul>
             </div>
 
