@@ -15,6 +15,35 @@ import {
 export default function Services() {
   const services = [
     { 
+      icon: faBolt, 
+      title: "Business Development", 
+      description: "Strategic business development services to help you identify new opportunities and grow your procurement capabilities.", 
+      features: ["Market Analysis", "Opportunity Identification", "Strategy Development", "Implementation Support"] 
+    },
+    { 
+      icon: faGear, 
+      title: "Engineering Services", 
+      description: "Technical expertise and engineering solutions to optimize project delivery, operational efficiency, and technical design.", 
+      features: [
+        "Power systems", 
+        "ELV systems", 
+        "HVAC systems", 
+        "Power Generation"
+      ] 
+    },
+    { 
+      icon: faGlobe, 
+      title: "Procurement Services", 
+      description: "We source and deliver from all over the world to our valued customers in line with global best practices.", 
+      features: [
+        "Global Sourcing & Supply Chain", 
+        "International Logistics Management", 
+        "Quality Assurance & Inspection", 
+        "Customs & Regulatory Compliance",
+        "Last-mile Delivery Solutions"
+      ] 
+    },
+    { 
       icon: faCartShopping, 
       title: "Operational and Project Procurement", 
       description: "Comprehensive procurement support for both day-to-day operations and complex projects, ensuring efficiency and on-budget delivery.", 
@@ -39,40 +68,10 @@ export default function Services() {
       ] 
     },
     { 
-      icon: faGear, 
-      title: "Engineering Services", 
-      description: "Technical expertise and engineering solutions to optimize project delivery, operational efficiency, and technical design.", 
-      features: [
-        "Technical Design & Review", 
-        "Project Engineering Support", 
-        "Asset Management", 
-        "Operational Efficiency Consulting",
-        "Technical Advisory Services"
-      ] 
-    },
-    { 
-      icon: faBolt, 
-      title: "Business Development", 
-      description: "Strategic business development services to help you identify new opportunities and grow your procurement capabilities.", 
-      features: ["Market Analysis", "Opportunity Identification", "Strategy Development", "Implementation Support"] 
-    },
-    { 
       icon: faBrain, 
       title: "Learning and Development", 
       description: "Comprehensive learning solutions to build procurement expertise and drive organizational capability development.", 
       features: ["Training Programs & Workshops", "Certification & Accreditation Support", "Customized Capability Building", "Leadership & Soft Skills Development"] 
-    },
-    { 
-      icon: faGlobe, 
-      title: "Procurement Services", 
-      description: "We source and deliver from all over the world to our valued customers in line with global best practices.", 
-      features: [
-        "Global Sourcing & Supply Chain", 
-        "International Logistics Management", 
-        "Quality Assurance & Inspection", 
-        "Customs & Regulatory Compliance",
-        "Last-mile Delivery Solutions"
-      ] 
     }
   ];
 
