@@ -46,19 +46,17 @@ export default function About() {
             About Goodman & Goldsmith
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed">
-            We deliver procurement strategy and operations. We train teams. We
-            scale procurement processes. We drive value across supply chains.
+            We sell, we buy, we deliver!
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="space-y-6">
             <h3 className="text-2xl text-gray-900">
-              Leading the Future of Supply Chain Excellence
+              Leading the Future
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              Founded by seasoned professionals with extensive experience in
-              procurement, supply chain management, and strategic consulting,
+              Founded by seasoned professionals with extensive experience,
               Goodman & Goldsmith has established itself as a trusted
               partner for organizations aiming to optimize and transform their
               operations.

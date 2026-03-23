@@ -29,18 +29,12 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
-            <div className="space-y-2">
-              <h1 className="leading-tight">
-                <span className="block text-5xl md:text-6xl font-extrabold tracking-wide text-blue-700 font-['Montserrat']">
-                  Delivering Procurement Excellence
-                </span>
-                <span className="block text-black text-lg md:text-xl font-['Playfair_Display']"></span>
-              </h1>
-              <p className="text-xl text-white leading-relaxed max-w-2xl">
-                <br />
-                Leading procurement firm delivering strategic solutions, business development, and learning & development services across industries.
-              </p>
-            </div>
+            <h1 className="text-5xl md:text-6xl font-extrabold tracking-wide text-blue-700 font-['Montserrat'] mb-8">
+              Excellent Execution Everytime
+            </h1>
+            <p className="text-xl text-white mb-10 leading-relaxed max-w-2xl">
+              Leading firm delivering strategic solutions in Business Development, Procurement and Engineering services.
+            </p>
           </div>
         </div>
       </div>

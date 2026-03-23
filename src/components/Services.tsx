@@ -9,17 +9,72 @@ import {
   faBrain, 
   faCartShopping, 
   faBolt, 
-  faArrowRight 
+  faArrowRight,
+  faGlobe 
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Services() {
   const services = [
-    { icon: faCartShopping, title: "Project Procurement", description: "Delivering projects on time and on budget by providing flexible procurement support and full project management", features: ["End-to-End Project Procurement Management", "Procurement-as-a-Service", "Bid & Tender Support", "Specialist Expertise Deployment"] },
-    { icon: faChessKnight, title: "Strategic Sourcing", description: "End-to-end strategic sourcing solutions to identify, evaluate, and select the best suppliers for your business needs.", features: ["Supplier Identification", "RFP Management", "Vendor Selection", "Contract Management"] },
-    { icon: faGear, title: "Operational Procurement", description: "Ensuring seamless day-to-day purchasing, enabling organizations to run efficiently and focus on their core priorities.", features: ["Purchase Order Management", "Supplier Coordination", "Compliance & Policy Adherence", "Cost & Spend Control"] },
-    { icon: faLeaf, title: "Ethical Sourcing", description: "Helping businesses source responsibly by ensuring sustainability, fair labor practices, and compliance with global ethical standards.", features: ["Sustainability Audits", "Fair Labor Compliance", "Supplier Code of Conduct", "Responsible Supply Chains"] },
-    { icon: faBolt, title: "Business Development", description: "Strategic business development services to help you identify new opportunities and grow your procurement capabilities.", features: ["Market Analysis", "Opportunity Identification", "Strategy Development", "Implementation Support"] },
-    { icon: faBrain, title: "Learning and Development", description: "Comprehensive learning solutions to build procurement expertise and drive organizational capability development.", features: ["Training Programs & Workshops", "Certification & Accreditation Support", "Customized Capability Building", "Leadership & Soft Skills Development"] }
+    { 
+      icon: faCartShopping, 
+      title: "Operational and Project Procurement", 
+      description: "Comprehensive procurement support for both day-to-day operations and complex projects, ensuring efficiency and on-budget delivery.", 
+      features: [
+        "End-to-End Project Procurement Management", 
+        "Purchase Order Management", 
+        "Supplier Coordination", 
+        "Bid & Tender Support", 
+        "Compliance & Policy Adherence"
+      ] 
+    },
+    { 
+      icon: faChessKnight, 
+      title: "Strategic Sourcing and Ethical Procurement", 
+      description: "Strategic sourcing solutions that identify the best suppliers while ensuring sustainability, fair labor practices, and ethical standards.", 
+      features: [
+        "Supplier Identification", 
+        "RFP & Vendor Selection", 
+        "Sustainability Audits", 
+        "Fair Labor Compliance", 
+        "Responsible Supply Chains"
+      ] 
+    },
+    { 
+      icon: faGear, 
+      title: "Engineering Services", 
+      description: "Technical expertise and engineering solutions to optimize project delivery, operational efficiency, and technical design.", 
+      features: [
+        "Technical Design & Review", 
+        "Project Engineering Support", 
+        "Asset Management", 
+        "Operational Efficiency Consulting",
+        "Technical Advisory Services"
+      ] 
+    },
+    { 
+      icon: faBolt, 
+      title: "Business Development", 
+      description: "Strategic business development services to help you identify new opportunities and grow your procurement capabilities.", 
+      features: ["Market Analysis", "Opportunity Identification", "Strategy Development", "Implementation Support"] 
+    },
+    { 
+      icon: faBrain, 
+      title: "Learning and Development", 
+      description: "Comprehensive learning solutions to build procurement expertise and drive organizational capability development.", 
+      features: ["Training Programs & Workshops", "Certification & Accreditation Support", "Customized Capability Building", "Leadership & Soft Skills Development"] 
+    },
+    { 
+      icon: faGlobe, 
+      title: "Procurement Services", 
+      description: "We source and deliver from all over the world to our valued customers in line with global best practices.", 
+      features: [
+        "Global Sourcing & Supply Chain", 
+        "International Logistics Management", 
+        "Quality Assurance & Inspection", 
+        "Customs & Regulatory Compliance",
+        "Last-mile Delivery Solutions"
+      ] 
+    }
   ];
 
   return (
