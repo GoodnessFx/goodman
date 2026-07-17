@@ -44,8 +44,11 @@ export default function Footer() {
             <div className="flex items-center mb-3 -mt-2">
   <img
     src="/goodman-logo.png"
-    alt="Goodman & Goldsmith Logo"
+    alt="Goodman & Goldsmith - Procurement consultants Lagos Nigeria"
     className="h-10 w-10 object-contain"
+    width="40"
+    height="40"
+    loading="lazy"
   />
   <span className="text-lg font-bold text-white ml-3">
     GOODMAN & GOLDSMITH
@@ -71,7 +74,7 @@ export default function Footer() {
 
               <div className="mt-4 ml-3">
                 <a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/company/goodman-and-goldsmith"
                   target="_blank"
                   rel="noreferrer"
                   className="w-10 h-10 bg-[#0A66C2] rounded-md flex items-center justify-center hover:bg-[#0A66C2] transition-colors"
@@ -95,7 +98,6 @@ export default function Footer() {
               <ul className="space-y-3">
                 <li><button onClick={() => scrollToSection("about")} className="text-gray-300 hover:text-[#0077B5] text-sm text-left">About Us</button></li>
                 <li><button onClick={() => scrollToSection("services")} className="text-gray-300 hover:text-[#0077B5] text-sm text-left">Our Services</button></li>
-                <li><button onClick={() => scrollToSection("industries")} className="text-gray-300 hover:text-[#0077B5] text-sm text-left">Our Industries</button></li>
                 <li><Link to="/contact" className="text-gray-300 hover:text-[#0077B5] text-sm">Contact</Link></li>
               </ul>
             </div>
@@ -123,7 +125,7 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="bg-[#0077B5] hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-colors text-sm"
+                  className="bg-[#0077B5] hover:bg-blue-600 text-white px-6 py-3 rounded-md transition-colors text-sm min-h-[44px]"
                 >
                   Subscribe
                 </button>
@@ -137,8 +139,11 @@ export default function Footer() {
           <div className="flex flex-col items-center">
             <img
               src="/goodman-logo.png"
-              alt="Goodman & Goldsmith Logo"
-              className="h-8 w-auto mb-3 rounded-md shadow-md  object-cover"
+              alt="Goodman & Goldsmith - Procurement consultants"
+              className="h-8 w-auto mb-3 rounded-md shadow-md object-cover"
+              width="32"
+              height="32"
+              loading="lazy"
             />
             <div className="text-gray-400 text-sm text-center">
               © {currentYear} GOODMAN & GOLDSMITH. All rights reserved.

@@ -28,8 +28,10 @@ export default function Header() {
         <div className="flex items-center space-x-2">
           <img
             src="/goodman-logo.png"
-            alt="Goodman Logo"
-            className="w-10 h-10  object-cover"
+            alt="Goodman & Goldsmith - Procurement consultants Lagos"
+            className="w-10 h-10 object-cover"
+            width="40"
+            height="40"
           />
           <span className="text-xl font-bold text-blue-900 tracking-wide">
             GOODMAN &amp; GOLDSMITH
@@ -72,7 +74,7 @@ export default function Header() {
         <div className="lg:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2"
+            className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center"
           >
             {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>

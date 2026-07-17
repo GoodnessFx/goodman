@@ -57,6 +57,7 @@
     "react-day-picker": "^9.9.0",
     "react-dom": "^18.3.1",
     "react-google-recaptcha": "^3.1.0",
+    "react-helmet-async": "^3.0.0",
     "react-hook-form": "^7.62.0",
     "react-resizable-panels": "^3.0.5",
     "react-router-dom": "^7.9.1",
@@ -74,6 +75,9 @@
     "start": "react-scripts start",
     "dev": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "node scripts/prerender.js",
+    "prerender": "node scripts/prerender.js",
+    "analyze": "source-map-explorer build/static/js/*.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -101,6 +105,9 @@
     "@types/react-google-recaptcha": "^2.1.9",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
+    "puppeteer": "^25.3.0",
+    "serve-handler": "^6.1.7",
+    "source-map-explorer": "^2.5.3",
     "tailwindcss": "^3.4.17"
   }
 }

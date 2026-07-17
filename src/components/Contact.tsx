@@ -8,6 +8,16 @@ import { useState, useEffect, useRef } from "react";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
+import SEO from "./SEO";
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact Goodman & Goldsmith",
+  description:
+    "Get in touch with Goodman & Goldsmith procurement consultants in Lagos, Nigeria. Request a consultation for procurement services.",
+  url: "https://goodmanandgoldsmith.com/contact",
+};
 
 declare global {
   interface Window {
@@ -122,12 +132,23 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 relative">
+    <>
+      <SEO
+        title="Contact Us - Procurement Services Lagos"
+        description="Contact Goodman & Goldsmith for expert procurement consulting in Lagos, Nigeria. Get a free consultation for supply chain, business development, and engineering services."
+        canonical="/contact"
+        ogType="website"
+        structuredData={contactSchema}
+      />
+      <section id="contact" className="py-20 relative">
       <div className="relative w-full h-96 flex items-center justify-center">
         <img
           src="https://media.istockphoto.com/id/1345338201/nl/foto/shot-of-two-young-call-center-agents-working-in-an-office.jpg?s=612x612&w=0&k=20&c=yLjM3R1r9NaymeGLzf_Jq7gP8Qimji4o2x0uUdJJ620="
-          alt="Contact Background"
+          alt="Goodman & Goldsmith contact our procurement consultants in Lagos"
           className="absolute inset-0 w-full h-full object-cover"
+          width="612"
+          height="612"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative text-center max-w-3xl px-4">
@@ -270,5 +291,6 @@ export default function Contact() {
         </div>
       </div>
     </section>
+    </>
   );
 }  
